@@ -1,11 +1,3 @@
-local wk = require("which-key")
-
-wk.register({
-  n = {
-    name = "[N]iteHogg"
-  },
-}, { prefix = "<leader>" })
-
 vim.keymap.set("n", "<leader>nl",
   function()
     return vim.o.relativenumber and "<cmd>set norelativenumber<cr>" or "<cmd>set relativenumber<cr>"
