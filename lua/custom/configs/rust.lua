@@ -1,6 +1,5 @@
 -- https://sharksforarms.dev/posts/neovim-rust/
-
-vim.o.ocompleteopt = "menuone,noinsert,noselect"
+vim.o.completeopt = "menuone,noinsert,noselect"
 vim.opt.shortmess = vim.opt.shortmess + "c"
 
 local function on_attach(client, buffer)
