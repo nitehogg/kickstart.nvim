@@ -16,6 +16,11 @@
 | ---------- | ------------- |
 | ctrl-b, :  | command mode  |
 | ctrl-b, up | previous pane |
+| ctrl-b, n  | next window   |
+| ctrl-b, p  | previous window |
+| ctrl-b, q  | show pane numbers |
+| ctrl-b, z  | zoom in on pane |
+| ctrl-b, I  | install plugins |
 
 
 
