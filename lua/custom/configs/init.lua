@@ -44,5 +44,12 @@ vim.keymap.set("n", "<leader>zc", "<cmd>Telescope neoclip<cr>", {
   }
 )
 
+vim.keymap.set("n", "<leader>zz", "<cmd>Lazy<cr>", {
+    remap = false,
+    silent = true,
+    desc = "La[z]y"
+  }
+)
+
 
 return {}
