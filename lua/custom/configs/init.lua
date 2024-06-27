@@ -35,24 +35,27 @@ vim.keymap.set("n", "<leader>zh",
 )
 
 vim.keymap.set("n", "<leader>zt", "<cmd>NvimTreeToggle<cr>", {
-    remap = false,
-    silent = true,
-    desc = "Toggle [T]ree"
-  }
+  remap = false,
+  silent = true,
+  desc = "Toggle [T]ree"
+}
 )
 
 vim.keymap.set("n", "<leader>zc", "<cmd>Telescope neoclip<cr>", {
-    remap = false,
-    silent = true,
-    desc = "Neo[c]lip"
-  }
+  remap = false,
+  silent = true,
+  desc = "Neo[c]lip"
+}
 )
 
 vim.keymap.set("n", "<leader>zz", "<cmd>Lazy<cr>", {
-    remap = false,
-    silent = true,
-    desc = "La[z]y"
-  }
+  remap = false,
+  silent = true,
+  desc = "La[z]y"
+}
 )
+
+-- Autocommands
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 return {}
