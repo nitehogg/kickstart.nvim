@@ -5,10 +5,11 @@ spectre
 telescope-undo
 tidy
 tree
+oil
 
-tabs
 comments
 macros
+snippets
 
 Possible Plugins:
 
@@ -17,3 +18,6 @@ https://neovimcraft.com/plugin/kevinhwang91/nvim-ufo
 
 * Surround
 https://neovimcraft.com/plugin/kylechui/nvim-surround
+
+:CocInstall coc-deno
+:CocCommand deno.initializeWorkspace

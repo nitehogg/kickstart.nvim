@@ -1,4 +1,5 @@
 require("custom.configs.gitsigns")
+require("custom.configs.nvim_lsp")
 
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
@@ -6,6 +7,9 @@ vim.opt.spell = true
 vim.opt.cursorline = true
 vim.opt.hlsearch = true
 
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
 
 -- The leader configuration is also configured in the ~/.config/nvim/init.lua.
 vim.keymap.set("n", "<leader>zl",
@@ -50,6 +54,5 @@ vim.keymap.set("n", "<leader>zz", "<cmd>Lazy<cr>", {
     desc = "La[z]y"
   }
 )
-
 
 return {}
