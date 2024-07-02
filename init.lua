@@ -624,7 +624,11 @@ cmp.setup {
   },
 }
 
-require('custom').setup(on_attach);
+require('custom.configs.vim');
+require("custom.configs.keymaps")
+require("custom.configs.autocommands")
+require("custom.configs.gitsigns")
+require("custom.configs.nvim_lspconfig").setup(on_attach);
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
