@@ -16,6 +16,9 @@ function module.setup(on_attach)
     "ts=typescript"
   }
 
+  -- Recommended by auto-session
+  vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
   keymaps.setup(on_attach);
   autocommands.setup(on_attach);
   gitsigns.setup(on_attach);
