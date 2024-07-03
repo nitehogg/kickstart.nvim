@@ -322,6 +322,9 @@ telescope.setup {
         ['<C-d>'] = false,
       },
     },
+    cache_picker = {
+      num_pickers = 10
+    }
     -- vimgrep_arguments = vimgrep_arguments,
   },
   pickers = {

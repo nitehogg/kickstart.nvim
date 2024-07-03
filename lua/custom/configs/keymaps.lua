@@ -1,4 +1,11 @@
 -- The leader configuration is also configured in the ~/.config/nvim/init.lua.
+
+vim.keymap.set("n", "<leader>sp", "<cmd>Telescope pickers<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[S]earch [P]ickers"
+})
+
 vim.keymap.set("n", "<leader>zl",
   function()
     return vim.o.relativenumber and "<cmd>set norelativenumber<cr>" or "<cmd>set relativenumber<cr>"
