@@ -1,5 +1,3 @@
-auto-session
-neoclip
 rust*
 spectre
 telescope-undo
@@ -7,7 +5,6 @@ tidy
 tree
 oil
 
-comments
 macros
 snippets
 
@@ -24,7 +21,9 @@ _may not need this coc stuff_
 :CocInstall coc-deno
 :CocCommand deno.initializeWorkspace
 :CocInstall coc-tsserver
-
-npm install -g typescript-language-server
-
 mkdir .vim && touch .vim/coc-settings.json
+
+
+npm install -g typescript typescript-language-server
+brew install ripgrep
+

@@ -326,7 +326,7 @@ telescope.setup {
   },
   pickers = {
     find_files = {
-      hidden = true,
+      -- hidden = true,
       -- find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
     }
   }
@@ -628,6 +628,7 @@ require('custom.configs.vim');
 require("custom.configs.keymaps")
 require("custom.configs.autocommands")
 require("custom.configs.gitsigns")
+require("custom.configs.luasnip")
 require("custom.configs.nvim_lspconfig").setup(on_attach);
 
 -- The line beneath this is called `modeline`. See `:help modeline`
