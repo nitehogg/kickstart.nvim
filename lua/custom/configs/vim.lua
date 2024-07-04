@@ -1,28 +1,18 @@
-local keymaps = require("custom.configs.keymaps")
-local autocommands = require("custom.configs.autocommands")
-local gitsigns = require("custom.configs.gitsigns")
-local lspconfig = require("custom.configs.nvim_lspconfig")
+-- Configs for nvim-tree.
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
-local module = {}
+-- Handeled in init.lua.
+-- vim.opt.termguicolors = true
 
-function module.setup(on_attach)
-  vim.opt.spelllang = "en_us"
-  vim.opt.spell = true
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
 
-  vim.opt.cursorline = true
-  vim.opt.hlsearch = true
+vim.opt.cursorline = true
 
-  vim.g.markdown_fenced_languages = {
-    "ts=typescript"
-  }
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
 
-  -- Recommended by auto-session
-  vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-
-  keymaps.setup(on_attach);
-  autocommands.setup(on_attach);
-  gitsigns.setup(on_attach);
-  lspconfig.setup(on_attach);
-end
-
-return module;
+-- Recommended by auto-session
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"

@@ -41,6 +41,8 @@ P.S. You can delete this when you're done too. It's your config now :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+require('custom.configs.vim');
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -627,12 +629,14 @@ cmp.setup {
   },
 }
 
-require('custom.configs.vim');
+require('custom.configs.vim_overrides');
 require("custom.configs.keymaps")
 require("custom.configs.autocommands")
-require("custom.configs.gitsigns")
-require("custom.configs.luasnip")
-require("custom.configs.nvim_lspconfig").setup(on_attach);
+
+require("custom.configs.loaders.gitsigns")
+require("custom.configs.loaders.luasnip")
+require("custom.configs.loaders.nvim-tree")
+require("custom.configs.loaders.nvim_lspconfig").setup(on_attach);
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
