@@ -62,7 +62,7 @@ vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", {
   desc = "[N]ext Buffer"
 })
 
-vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>", {
+vim.keymap.set("n", "<leader>bdd", "<cmd>bd<cr>", {
   remap = false,
   silent = true,
   desc = "[D]elete Buffer"
@@ -75,13 +75,13 @@ vim.keymap.set("n", "<leader>bdf", "<cmd>bd!<cr>", {
 })
 
 -- Delete all | open latest | delete latest (no name).
-vim.keymap.set("n", "<leader>bdo", "<cmd>%bd|e#|bd#", {
+vim.keymap.set("n", "<leader>bdo", "<cmd>%bd|e#|bd#<cr>", {
   remap = false,
   silent = true,
   desc = "[D]elete [O]ther Buffers"
 })
 
-vim.keymap.set("n", "<leader>bda", "<cmd>%bd|bd#", {
+vim.keymap.set("n", "<leader>bda", "<cmd>%bd|bd#<cr>", {
   remap = false,
   silent = true,
   desc = "[D]elete [A]ll Buffers"
