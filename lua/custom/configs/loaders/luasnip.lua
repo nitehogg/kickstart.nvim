@@ -1,3 +1,3 @@
 require('luasnip.loaders.from_lua').load({
-  paths = './snippets'
+  paths = { '~/.config/nvim/lua/custom/configs/snippets' }
 });

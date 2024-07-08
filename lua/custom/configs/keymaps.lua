@@ -1,12 +1,8 @@
 -- The leader configuration is also configured in the ~/.config/nvim/init.lua.
 
-vim.keymap.set("n", "<leader>sp", "<cmd>Telescope pickers<cr>", {
-  remap = false,
-  silent = true,
-  desc = "[S]earch [P]ickers"
-})
 
-vim.keymap.set("n", "<leader>zl",
+-- [V]im
+vim.keymap.set("n", "<leader>vl",
   function()
     return vim.o.relativenumber and "<cmd>set norelativenumber<cr>" or "<cmd>set relativenumber<cr>"
   end, {
@@ -17,7 +13,7 @@ vim.keymap.set("n", "<leader>zl",
   }
 )
 
-vim.keymap.set("n", "<leader>zh",
+vim.keymap.set("n", "<leader>vh",
   function()
     return vim.o.hlsearch and "<cmd>set nohlsearch<cr>" or "<cmd>set hlsearch<cr>"
   end, {
@@ -28,20 +24,72 @@ vim.keymap.set("n", "<leader>zh",
   }
 )
 
-vim.keymap.set("n", "<leader>zt", "<cmd>NvimTreeToggle<cr>", {
+vim.keymap.set("n", "<leader>vt", "<cmd>NvimTreeToggle<cr>", {
   remap = false,
   silent = true,
   desc = "Toggle [T]ree"
 })
 
-vim.keymap.set("n", "<leader>zc", "<cmd>Telescope neoclip<cr>", {
+vim.keymap.set("n", "<leader>vc", "<cmd>Telescope neoclip<cr>", {
   remap = false,
   silent = true,
   desc = "Neo[c]lip"
 })
 
-vim.keymap.set("n", "<leader>zz", "<cmd>Lazy<cr>", {
+vim.keymap.set("n", "<leader>vz", "<cmd>Lazy<cr>", {
   remap = false,
   silent = true,
   desc = "La[z]y"
+})
+
+vim.keymap.set("n", "<leader>vr", "<cmd>luafile $MYVIMRC<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[R]eload Config"
+})
+
+
+-- [B]uffer
+vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[P]revious Buffer"
+})
+
+vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[N]ext Buffer"
+})
+
+vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[D]elete Buffer"
+})
+
+vim.keymap.set("n", "<leader>bdf", "<cmd>bd!<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[D]elete Buffer Force"
+})
+
+vim.keymap.set("n", "<leader>bf", "<C-g>", {
+  remap = false,
+  silent = true,
+  desc = "Buffer [F]ilename"
+})
+
+
+-- [S]earch
+vim.keymap.set("n", "<leader>sp", "<cmd>Telescope pickers<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[S]earch [P]ickers"
+})
+
+vim.keymap.set("n", "<leader>sc", "<cmd>lua require('telescope.builtin').grep_string()<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[S]earch by [C]ursor"
 })
