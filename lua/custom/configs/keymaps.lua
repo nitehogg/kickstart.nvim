@@ -101,8 +101,9 @@ vim.keymap.set("n", "<leader>sp", "<cmd>Telescope pickers<cr>", {
   desc = "[S]earch [P]ickers"
 })
 
-vim.keymap.set("n", "<leader>sc", "<cmd>lua require('telescope.builtin').grep_string()<cr>", {
+vim.keymap.set("n", "<leader>sa",
+  "<cmd>lua require('telescope.builtin').find_files({ cwd = require('telescope.utils').buffer_dir() })<cr>", {
   remap = false,
   silent = true,
-  desc = "[S]earch by [C]ursor"
+  desc = "[S]earch [A]ctive Directory"
 })
