@@ -109,7 +109,15 @@ vim.keymap.set("n", "<leader>sp", "<cmd>Telescope pickers<cr>", {
 
 vim.keymap.set("n", "<leader>sa",
   "<cmd>lua require('telescope.builtin').find_files({ cwd = require('telescope.utils').buffer_dir() })<cr>", {
-    remap = false,
-    silent = true,
-    desc = "[S]earch [A]ctive Directory"
-  })
+  remap = false,
+  silent = true,
+  desc = "[S]earch [A]ctive Directory"
+})
+
+
+-- [C]ode
+vim.keymap.set("n", "<leader>cc", "<cmd>lua vim.lsp.buf.hover()<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[C]ontext"
+})
