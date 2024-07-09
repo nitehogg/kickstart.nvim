@@ -62,6 +62,12 @@ vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", {
   desc = "[N]ext Buffer"
 })
 
+vim.keymap.set("n", "<leader>bw", "<cmd>w<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[W]rite Buffer"
+})
+
 vim.keymap.set("n", "<leader>bdd", "<cmd>bd<cr>", {
   remap = false,
   silent = true,
@@ -103,7 +109,7 @@ vim.keymap.set("n", "<leader>sp", "<cmd>Telescope pickers<cr>", {
 
 vim.keymap.set("n", "<leader>sa",
   "<cmd>lua require('telescope.builtin').find_files({ cwd = require('telescope.utils').buffer_dir() })<cr>", {
-  remap = false,
-  silent = true,
-  desc = "[S]earch [A]ctive Directory"
-})
+    remap = false,
+    silent = true,
+    desc = "[S]earch [A]ctive Directory"
+  })
