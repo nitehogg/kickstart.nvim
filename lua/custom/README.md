@@ -1,9 +1,7 @@
 rust*
 spectre
 telescope-undo
-tidy
-tree
-oil
+markdown
 
 macros
 snippets
