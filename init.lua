@@ -637,6 +637,7 @@ require("custom.configs.autocommands")
 
 require("custom.configs.loaders.gitsigns")
 require("custom.configs.loaders.luasnip")
+require("custom.configs.loaders.conform")
 require("custom.configs.loaders.nvim-tree")
 require("custom.configs.loaders.nvim_lspconfig").setup(on_attach);
 
