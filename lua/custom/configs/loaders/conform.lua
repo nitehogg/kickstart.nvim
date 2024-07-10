@@ -10,6 +10,7 @@ require("conform").setup({
   },
   -- Set up format-on-save
   format_on_save = { timeout_ms = 500, lsp_fallback = true },
+  notify_on_error = false,
   -- Customize formatters
   formatters = {
     local_prettier = {
