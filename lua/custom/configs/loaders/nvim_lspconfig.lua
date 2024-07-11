@@ -15,7 +15,7 @@ function module.setup(on_attach)
       on_attach(client, bufnr);
     end,
     root_dir = nvim_lsp.util.root_pattern("package.json"),
-    single_file_support = false
+    single_file_support = false,
   }
 end
 

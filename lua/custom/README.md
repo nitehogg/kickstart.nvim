@@ -2,9 +2,10 @@ rust*
 spectre
 telescope-undo
 markdown
+trouble.nvim
+omnisharp
 
 macros
-snippets
 
 Possible Plugins:
 
