@@ -41,7 +41,7 @@ P.S. You can delete this when you're done too. It's your config now :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-require('custom.configs.vim');
+require('custom.loaders.global');
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -114,7 +114,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim',  version = "v2.1.0", opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -126,6 +126,10 @@ require('lazy').setup({
         delete = { text = '_' },
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
+        current_line_blame = true,
+        current_line_blame_opts = {
+          delay = 750,
+        },
       },
       on_attach = function(bufnr)
         vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
@@ -239,7 +243,7 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- Set highlight on search
-vim.o.hlsearch = false
+-- vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
@@ -522,6 +526,18 @@ require('which-key').register {
   ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
   ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
   ['<leader>v'] = { name = '[V]im', _ = 'which_key_ignore' },
+
+  -- Upcoming spec.
+  -- { "<leader>b", group = "[B]uffer" },
+  -- { "<leader>bd", group = "[B]uffer [D]elete" },
+  -- { "<leader>c", group = "[C]ode" },
+  -- { "<leader>d", group = "[D]ocument" },
+  -- { "<leader>g", group = "[G]it" },
+  -- { "<leader>h", group = "More git" },
+  -- { "<leader>r", group = "[R]ename" },
+  -- { "<leader>s", group = "[S]earch" },
+  -- { "<leader>v", group = "[V]im" },
+  -- { "<leader>w", group = "[W]orkspace" },
 }
 
 -- mason-lspconfig requires that these setup functions are called in this order
@@ -631,15 +647,10 @@ cmp.setup {
   },
 }
 
-require('custom.configs.vim_overrides');
-require("custom.configs.keymaps")
-require("custom.configs.autocommands")
-
-require("custom.configs.loaders.gitsigns")
-require("custom.configs.loaders.luasnip")
-require("custom.configs.loaders.conform")
-require("custom.configs.loaders.nvim-tree")
-require("custom.configs.loaders.nvim_lspconfig").setup(on_attach);
+require("custom.loaders.typescript_deno").setup(on_attach, capabilities);
+require("custom.loaders.typescript_node").setup(on_attach, capabilities);
+require("custom.loaders.javascript_node").setup(on_attach, capabilities);
+require("custom.loaders.c-sharp").setup(on_attach, capabilities);
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

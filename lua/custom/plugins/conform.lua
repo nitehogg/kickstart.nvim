@@ -14,5 +14,8 @@ return {
     },
   },
   -- Everything in opts will be passed to setup()
-  opts = {},
+  opts = {
+    format_on_save = { timeout_ms = 500, lsp_fallback = true },
+    notify_on_error = false,
+  },
 };

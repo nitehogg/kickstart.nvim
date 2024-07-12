@@ -5,8 +5,8 @@ local t = ls.text_node;
 local i = ls.insert_node;
 
 return {
-  s("debug", {
-    t("console.log('!!DEBUG!!', '"),
+  debug = s("debug", {
+    t("console.log('!!debug!!', '"),
     i(1, "param"),
     t("');")
   }),
