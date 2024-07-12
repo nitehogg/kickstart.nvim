@@ -1,9 +1,7 @@
 rust*
-spectre
 telescope-undo
+surround
 markdown
-trouble.nvim
-omnisharp
 
 macros
 
