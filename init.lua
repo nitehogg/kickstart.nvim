@@ -41,7 +41,7 @@ P.S. You can delete this when you're done too. It's your config now :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-require('custom.loaders.global');
+require('custom.loaders.global.early_load');
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -647,9 +647,10 @@ cmp.setup {
   },
 }
 
+require('custom.loaders.global');
 require("custom.loaders.typescript_deno").setup(on_attach, capabilities);
 require("custom.loaders.typescript_node").setup(on_attach, capabilities);
-require("custom.loaders.javascript_node").setup(on_attach, capabilities);
+-- require("custom.loaders.javascript_node").setup(on_attach, capabilities);
 require("custom.loaders.c-sharp").setup(on_attach, capabilities);
 
 -- The line beneath this is called `modeline`. See `:help modeline`

@@ -22,16 +22,11 @@ function module.setup(on_attach, capabilites)
       };
       conform.formatters_by_ft.javascript = { { "local_prettier" } };
 
-      local isnodeproject = vim.fn.filereadable("./package.json");
-
       -- This needs to be cloned.
       lint.linters.local_eslint = lint.linters.eslint;
       lint.linters.local_eslint.cmd = "node_modules/.bin/eslint";
 
-      if (isnodeproject)
-      then
-        lint.linters_by_ft.javascript = { "local_eslint" };
-      end
+      lint.linters_by_ft.javascript = { "local_eslint" };
 
       on_attach(client, bufnr);
     end,
