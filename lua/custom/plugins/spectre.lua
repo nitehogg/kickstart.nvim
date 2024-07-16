@@ -14,18 +14,18 @@ return {
       desc = "Toggle [S]pectre",
     },
     {
-      "<leader>sw",
+      "<leader>Sw",
       "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
       desc = "[S]earch current [w]ord",
     },
     {
-      "<leader>sw",
+      "<leader>Sw",
       "<esc><cmd>lua require('spectre').open_visual()<CR>",
       mode = "v",
       desc = "[S]earch current [w]ord",
     },
     {
-      "<leader>sp",
+      "<leader>Sp",
       "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
       desc = "Search on current file",
     },
