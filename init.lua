@@ -118,6 +118,7 @@ require('lazy').setup({
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
+    version = "0.9.0",
     opts = {
       -- See `:help gitsigns.txt`
       signs = {
@@ -126,10 +127,12 @@ require('lazy').setup({
         delete = { text = '_' },
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
-        current_line_blame = true,
-        current_line_blame_opts = {
-          delay = 750,
-        },
+      },
+      current_line_blame = true,
+      current_line_blame_opts = {
+        delay = 750,
+        virt_text = true,
+        virt_text_pos = 'eol'
       },
       on_attach = function(bufnr)
         vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
