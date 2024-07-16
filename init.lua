@@ -650,7 +650,6 @@ cmp.setup {
 require('custom.loaders.global');
 require("custom.loaders.typescript_deno").setup(on_attach, capabilities);
 require("custom.loaders.typescript_node").setup(on_attach, capabilities);
--- require("custom.loaders.javascript_node").setup(on_attach, capabilities);
 require("custom.loaders.c-sharp").setup(on_attach, capabilities);
 
 -- The line beneath this is called `modeline`. See `:help modeline`
