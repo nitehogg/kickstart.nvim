@@ -651,6 +651,7 @@ require('custom.loaders.global');
 require("custom.loaders.typescript_deno").setup(on_attach, capabilities);
 require("custom.loaders.typescript_node").setup(on_attach, capabilities);
 require("custom.loaders.c-sharp").setup(on_attach, capabilities);
+require("custom.loaders.rust").setup(on_attach, capabilities);
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
