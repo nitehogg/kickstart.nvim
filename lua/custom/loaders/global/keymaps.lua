@@ -115,8 +115,9 @@ vim.keymap.set("n", "<leader>sa",
 
 
 -- [C]ode
-vim.keymap.set("n", "<leader>cc", "<cmd>lua vim.lsp.buf.hover()<cr>", {
-  remap = false,
-  silent = true,
-  desc = "[C]ontext"
-})
+-- Use K
+-- vim.keymap.set("n", "<leader>cc", "<cmd>lua vim.lsp.buf.hover()<cr>", {
+--   remap = false,
+--   silent = true,
+--   desc = "[C]ontext"
+-- })

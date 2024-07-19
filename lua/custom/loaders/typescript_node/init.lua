@@ -5,6 +5,11 @@ local module = {}
 function module.setup(on_attach, capabilites)
   nvim_lsp.tsserver.setup {
     on_attach = function(client, bufnr)
+      if (vim.fn.filereadable("./package.json") == 0)
+      then
+        return;
+      end
+
       client.server_capabilities.documentFormattingProvider = false;
       client.server_capabilities.documentRangeFormattingProvider = false;
 

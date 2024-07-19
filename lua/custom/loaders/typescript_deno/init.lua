@@ -5,6 +5,11 @@ local module = {}
 function module.setup(on_attach, capabilites)
   nvim_lsp.denols.setup {
     on_attach = function(client, bufnr)
+      if (vim.fn.filereadable("./deno.jsonc") == 0)
+      then
+        return;
+      end
+
       require("custom.loaders.typescript_deno.snippets");
 
       on_attach(client, bufnr);

@@ -18,4 +18,3 @@ vim.opt.number = true
 vim.opt.signcolumn = "yes"
 
 require('custom.loaders.global.keymaps');
-require('custom.loaders.global.autocommands');
