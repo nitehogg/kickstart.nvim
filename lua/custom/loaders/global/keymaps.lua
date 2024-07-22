@@ -67,6 +67,24 @@ vim.keymap.set("n", "<leader>bw", "<cmd>w<cr>", {
   desc = "[W]rite Buffer"
 })
 
+vim.keymap.set("n", "<leader>br", "<cmd>e<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[R]efresh"
+})
+
+vim.keymap.set("n", "<leader>bh", "<cmd>bd<bar>b#<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[H]ard Refresh"
+})
+
+vim.keymap.set("n", "<leader>ba", "<cmd>redraw!<cr>", {
+  remap = false,
+  silent = true,
+  desc = "Redr[a]w"
+})
+
 vim.keymap.set("n", "<leader>bdd", "<cmd>bd<cr>", {
   remap = false,
   silent = true,
@@ -78,6 +96,7 @@ vim.keymap.set("n", "<leader>bdf", "<cmd>bd!<cr>", {
   silent = true,
   desc = "[D]elete Buffer [F]orce"
 })
+
 
 -- Delete all | open latest | delete latest (no name).
 vim.keymap.set("n", "<leader>bdo", "<cmd>%bd|e#|bd#<cr>", {
