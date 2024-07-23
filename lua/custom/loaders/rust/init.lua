@@ -1,17 +1,15 @@
-local nvim_lsp = require('lspconfig')
-
 local module = {}
 
 function module.setup(on_attach, capabilites)
-	-- nvim_lsp.denols.setup {
-	-- 	on_attach = function(client, bufnr)
-	-- 		require("custom.loaders.typescript_deno.snippets");
-	--
-	-- 		on_attach(client, bufnr);
-	-- 	end,
-	-- 	capabilites = capabilites,
-	-- 	root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
-	-- }
+	--Rustaceanvim handles configuring the LSP.
+	vim.g.rustaceanvim = {
+		server = {
+			on_attach = function(client, bufnr)
+				require("custom.loaders.rust.keymaps");
+				on_attach(client, bufnr);
+			end,
+		}
+	};
 end
 
 return module;
