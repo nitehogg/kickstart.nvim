@@ -41,6 +41,12 @@ vim.keymap.set("n", "<leader>vz", "<cmd>Lazy<cr>", {
   desc = "La[z]y"
 })
 
+vim.keymap.set("n", "<leader>vm", "<cmd>Mason<cr>", {
+  remap = false,
+  silent = true,
+  desc = "[M]ason"
+})
+
 vim.keymap.set("n", "<leader>vr", "<cmd>luafile $MYVIMRC<cr>", {
   remap = false,
   silent = true,
@@ -67,22 +73,22 @@ vim.keymap.set("n", "<leader>bw", "<cmd>w<cr>", {
   desc = "[W]rite Buffer"
 })
 
-vim.keymap.set("n", "<leader>br", "<cmd>e<cr>", {
+vim.keymap.set("n", "<leader>bl", "<cmd>e<cr>", {
   remap = false,
   silent = true,
-  desc = "[R]efresh"
+  desc = "[R]eload"
 })
 
 vim.keymap.set("n", "<leader>bh", "<cmd>bd<bar>b#<cr>", {
   remap = false,
   silent = true,
-  desc = "[H]ard Refresh"
+  desc = "[H]ard Reload"
 })
 
-vim.keymap.set("n", "<leader>ba", "<cmd>redraw!<cr>", {
+vim.keymap.set("n", "<leader>br", "<cmd>redraw!<cr>", {
   remap = false,
   silent = true,
-  desc = "Redr[a]w"
+  desc = "[R]edraw"
 })
 
 vim.keymap.set("n", "<leader>bdd", "<cmd>bd<cr>", {

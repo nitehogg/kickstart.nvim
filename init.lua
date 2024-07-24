@@ -230,7 +230,7 @@ require('lazy').setup({
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
   -- require 'kickstart.plugins.autoformat',
-  -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.debug',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -530,7 +530,7 @@ require('which-key').register {
   ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
   ['<leader>v'] = { name = '[V]im', _ = 'which_key_ignore' },
 
-  -- Upcoming spec.
+  -- Upcoming spec v3
   -- { "<leader>b", group = "[B]uffer" },
   -- { "<leader>bd", group = "[B]uffer [D]elete" },
   -- { "<leader>c", group = "[C]ode" },
