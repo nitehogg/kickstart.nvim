@@ -6,8 +6,8 @@ local i = ls.insert_node;
 
 return {
   debug = s("$debug", {
-    t("console.log('!!debug!!', '"),
+    t("console.log('!!debug!!', "),
     i(1, "param"),
-    t("');")
+    t(");")
   }),
 };
