@@ -314,14 +314,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --
 -- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#file-and-text-search-in-hidden-files-and-directories
 local telescope = require("telescope");
--- local telescopeConfig = require("telescope.config");
--- local vimgrep_arguments = {
---   unpack(telescopeConfig.values.vimgrep_arguments)
--- }
---
--- table.insert(vimgrep_arguments, "--hidden");
--- table.insert(vimgrep_arguments, "--glob");
--- table.insert(vimgrep_arguments, "!**/.git/*");
+local telescopeConfig = require("telescope.config");
+local vimgrep_arguments = {
+  unpack(telescopeConfig.values.vimgrep_arguments)
+}
+
+table.insert(vimgrep_arguments, "--hidden");
+table.insert(vimgrep_arguments, "--glob");
+table.insert(vimgrep_arguments, "!**/.git/*");
 
 telescope.setup {
   defaults = {
@@ -333,13 +333,13 @@ telescope.setup {
     },
     cache_picker = {
       num_pickers = 10
-    }
-    -- vimgrep_arguments = vimgrep_arguments,
+    },
+    vimgrep_arguments = vimgrep_arguments,
   },
   pickers = {
     find_files = {
       -- hidden = true,
-      -- find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
     }
   }
 }

@@ -17,4 +17,5 @@ vim.opt.hlsearch = true
 vim.opt.number = true
 vim.opt.signcolumn = "yes"
 
-require('loaders.global.keymaps');
+require("loaders.global.keymaps");
+require("loaders.global.autocommands");
