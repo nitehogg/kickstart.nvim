@@ -10,7 +10,7 @@ function module.setup(on_attach, capabilites)
         return;
       end
 
-      require("loaders.typescript_deno.snippets");
+      require("loaders.typescript_node.snippets");
 
       on_attach(client, bufnr);
     end,

@@ -1,7 +1,13 @@
 local ls = require("luasnip");
 
-local snippets_js = require("custom.loaders.typescript_node.snippets_shared");
+local s = ls.snippet;
+local t = ls.text_node;
+local i = ls.insert_node;
 
 ls.add_snippets("typescript", {
-  snippets_js.debug,
+  s("$debug", {
+    t("console.log('!!debug!!', "),
+    i(1, "param"),
+    t(");")
+  }),
 });
