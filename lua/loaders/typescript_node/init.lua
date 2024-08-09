@@ -13,7 +13,7 @@ function module.setup(on_attach, capabilites)
       client.server_capabilities.documentFormattingProvider = false;
       client.server_capabilities.documentRangeFormattingProvider = false;
 
-      require("custom.loaders.typescript_node.snippets");
+      require("loaders.typescript_node.snippets");
 
       local conform = require("conform");
       local lint = require("lint");

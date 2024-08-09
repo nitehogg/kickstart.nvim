@@ -7,7 +7,7 @@ function module.setup(on_attach, capabilites)
 	vim.g.rustaceanvim = {
 		server = {
 			on_attach = function(client, bufnr)
-				require("custom.loaders.rust.keymaps");
+				require("loaders.rust.keymaps");
 
 				-- Set up debugging.
 				dap.adapters.gdb = {

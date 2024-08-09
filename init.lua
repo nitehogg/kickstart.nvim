@@ -41,7 +41,7 @@ P.S. You can delete this when you're done too. It's your config now :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-require('custom.loaders.global.early_load');
+require('loaders.global.early_load');
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -229,8 +229,8 @@ require('lazy').setup({
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
-  -- require 'kickstart.plugins.autoformat',
-  require 'kickstart.plugins.debug',
+  -- require 'plugins.autoformat',
+  require 'plugins.debug',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -238,7 +238,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  { import = 'custom.plugins' },
+  { import = 'plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -650,11 +650,11 @@ cmp.setup {
   },
 }
 
-require('custom.loaders.global');
-require("custom.loaders.typescript_deno").setup(on_attach, capabilities);
-require("custom.loaders.typescript_node").setup(on_attach, capabilities);
-require("custom.loaders.c-sharp").setup(on_attach, capabilities);
-require("custom.loaders.rust").setup(on_attach, capabilities);
+require("loaders.global");
+require("loaders.typescript_deno").setup(on_attach, capabilities);
+require("loaders.typescript_node").setup(on_attach, capabilities);
+require("loaders.c-sharp").setup(on_attach, capabilities);
+require("loaders.rust").setup(on_attach, capabilities);
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

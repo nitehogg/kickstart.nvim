@@ -1,4 +1,4 @@
--- debug.lua
+-- debug.lua -- Provided by Kickstart
 --
 -- Shows how to use the DAP plugin to debug your code.
 --
