@@ -1,16 +1,21 @@
 local nvim_lsp = require('lspconfig')
 
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { "*.ts" },
+  callback = function()
+    require("loaders.typescript_node.snippets");
+  end,
+});
+
 local module = {}
 
-function module.setup(on_attach, capabilites)
+function module.setup_lsp(on_attach, capabilites)
   nvim_lsp.denols.setup {
     on_attach = function(client, bufnr)
       if (vim.fn.filereadable("./deno.jsonc") == 0)
       then
         return;
       end
-
-      require("loaders.typescript_node.snippets");
 
       on_attach(client, bufnr);
     end,

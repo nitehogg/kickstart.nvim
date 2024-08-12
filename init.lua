@@ -41,7 +41,7 @@ P.S. You can delete this when you're done too. It's your config now :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-require('loaders.global.early_load');
+require('loaders.global.vim_options');
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -83,6 +83,7 @@ require('lazy').setup({
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
+    commit = 'ff97d37',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
@@ -230,7 +231,6 @@ require('lazy').setup({
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
   -- require 'plugins.autoformat',
-  require 'plugins.debug',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -279,8 +279,6 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
 
@@ -650,11 +648,12 @@ cmp.setup {
   },
 }
 
-require("loaders.global");
-require("loaders.typescript_deno").setup(on_attach, capabilities);
-require("loaders.typescript_node").setup(on_attach, capabilities);
-require("loaders.c-sharp").setup(on_attach, capabilities);
-require("loaders.rust").setup(on_attach, capabilities);
+require('loaders.global.mason');
+require("loaders.global.keymaps");
+require("loaders.typescript_deno").setup_lsp(on_attach, capabilities);
+require("loaders.typescript_node").setup_lsp(on_attach, capabilities);
+require("loaders.c-sharp").setup_lsp(on_attach, capabilities);
+require("loaders.rust").setup_lsp(on_attach, capabilities);
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

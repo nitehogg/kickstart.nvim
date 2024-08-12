@@ -1,5 +1,8 @@
--- Handeled in init.lua.
--- vim.opt.termguicolors = true
+-- Configs for nvim-tree.
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+vim.opt.termguicolors = true
 
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
@@ -16,7 +19,3 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 vim.opt.hlsearch = true
 vim.opt.number = true
 vim.opt.signcolumn = "yes"
-
-require("loaders.global.keymaps");
-require("loaders.global.autocommands");
-require("loaders.global.mason");

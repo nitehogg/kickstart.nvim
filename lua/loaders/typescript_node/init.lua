@@ -1,8 +1,15 @@
 local nvim_lsp = require('lspconfig');
 
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { "*.ts" },
+  callback = function()
+    require("loaders.typescript_node.snippets");
+  end,
+});
+
 local module = {}
 
-function module.setup(on_attach, capabilites)
+function module.setup_lsp(on_attach, capabilites)
   nvim_lsp.tsserver.setup {
     on_attach = function(client, bufnr)
       if (vim.fn.filereadable("./package.json") == 0)
@@ -12,8 +19,6 @@ function module.setup(on_attach, capabilites)
 
       client.server_capabilities.documentFormattingProvider = false;
       client.server_capabilities.documentRangeFormattingProvider = false;
-
-      require("loaders.typescript_node.snippets");
 
       local conform = require("conform");
       local lint = require("lint");

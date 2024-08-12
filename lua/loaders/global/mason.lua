@@ -1,12 +1,14 @@
 local mason_registry = require("mason-registry");
 
 local packages = {
-  ["hadolint"] = "2.12.x",
+  -- ["hadolint"] = "2.12.x",
   ["sqlfmt"] = "0.23.x",
   ["vale"] = "3.7.x",
   ["jsonlint"] = "1.6.x",
   ["omnisharp"] = "1.39.x",
   ["lua-language-server"] = "3.9.x",
+  ["dockerfile-language-server"] = "0.13.x",
+  -- ["cspell"] = "8.13.x",
 };
 
 -- mason_registry.refresh();
