@@ -1,5 +1,19 @@
 -- The leader configuration is also configured in the ~/.config/nvim/init.lua.
 
+
+vim.keymap.set("n", "<leader>o",
+  function()
+    local buffer_path = vim.api.nvim_buf_get_name(0);
+    return "<cmd>!open " .. buffer_path .. "<cr>";
+  end, {
+    remap = false,
+    silent = true,
+    expr = true,
+    desc = "[O]pen buffer externally"
+  }
+)
+
+
 -- [V]im
 vim.keymap.set("n", "<leader>vl",
   function()
