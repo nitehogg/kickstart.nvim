@@ -19,3 +19,4 @@ vim.opt.signcolumn = "yes"
 
 require("loaders.global.keymaps");
 require("loaders.global.autocommands");
+require("loaders.global.mason");
