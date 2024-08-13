@@ -650,6 +650,7 @@ cmp.setup {
 
 require('loaders.global.mason');
 require("loaders.global.keymaps");
+require("loaders.javascipt");
 require("loaders.typescript_deno").setup_lsp(on_attach, capabilities);
 require("loaders.typescript_node").setup_lsp(on_attach, capabilities);
 require("loaders.c-sharp").setup_lsp(on_attach, capabilities);
