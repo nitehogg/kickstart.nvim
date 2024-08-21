@@ -15,6 +15,9 @@ return {
         exclude = {
           ".env"
         }
+      },
+      view = {
+        width = 60
       }
     });
   end,
